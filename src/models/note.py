@@ -5,9 +5,9 @@ from pydantic import BaseModel, Field
 
 
 class NoteType(Enum):
-    PROJECT = "project"
-    INFRA = "infra"
-    PERSONAL = "personal"
+    PROJECT = "PROJECT"
+    INFRA = "INFRA"
+    PERSONAL = "PERSONAL"
 
 
 class Note(BaseModel):

@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import List, Optional
 
 from tinydb import Query, TinyDB
-from models.note import Note, NoteType
+from src.models.note import Note, NoteType
 
 
 class NoteRepository:

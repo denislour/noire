@@ -4,8 +4,8 @@ from rich.console import Console
 from rich.table import Table
 from typer import Option
 
-from models.note import NoteType
-from databases.note_repository import NoteRepository
+from src.models.note import NoteType
+from src.databases.note_repository import NoteRepository
 
 console = Console()
 

@@ -1,14 +1,17 @@
-from typer import Typer
+from functools import partial
+import typer
 
-from commands import add_command, list_command
+from src.const.commands import COMMANDS
+from src.databases.note_repository import NoteRepository
 
-app = Typer(
+
+app = typer.Typer(
     name="noir",
     help="A professional note management CLI tool",
     add_completion=False,
 )
 
-COMMANDS = {"add": add_command, "list": list_command}
+note_repository = NoteRepository()
 
 for name, command_func in COMMANDS.items():
     app.command(name)(command_func)

@@ -8,6 +8,8 @@ def add_command(
     title: str,
     note_type: NoteType = Option(
         NoteType.PERSONAL,
+        "--note-type",
+        "-t",
         help="Type of note",
     ),
 ) -> None:

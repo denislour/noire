@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 
 class NoteType(Enum):
-    PROJECT = "PROJECT"
+    PROJECT = "project"
     INFRA = "INFRA"
     PERSONAL = "PERSONAL"
 

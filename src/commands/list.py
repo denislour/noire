@@ -11,7 +11,9 @@ console = Console()
 
 
 def list_command(
-    note_type: Optional[NoteType] = Option(None, help="Filter by note type"),
+    note_type: Optional[NoteType] = Option(
+        None, "--note-type", "-t", help="Filter by note type"
+    ),
     completed: Optional[bool] = Option(None, help="Filter by completion status"),
 ) -> None:
     """Display list of notes with optional filtering."""

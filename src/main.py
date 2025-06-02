@@ -1,4 +1,3 @@
-from functools import partial
 import typer
 
 from src.const.commands import COMMANDS
@@ -9,6 +8,7 @@ app = typer.Typer(
     name="noir",
     help="A professional note management CLI tool",
     add_completion=False,
+    context_settings={"help_option_names": ["-h", "--help"]},
 )
 
 note_repository = NoteRepository()

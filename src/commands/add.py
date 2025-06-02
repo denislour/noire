@@ -11,6 +11,8 @@ def add_command(
         "--note-type",
         "-t",
         help="Type of note",
+        case_sensitive=False,
+        show_default=False,
     ),
 ) -> None:
     """Add a new note to the system."""

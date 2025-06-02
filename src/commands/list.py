@@ -12,7 +12,10 @@ console = Console()
 
 def list_command(
     note_type: Optional[NoteType] = Option(
-        None, "--note-type", "-t", help="Filter by note type"
+        None,
+        "--note-type",
+        "-t",
+        help="Filter by note type",
     ),
     completed: Optional[bool] = Option(None, help="Filter by completion status"),
 ) -> None:
@@ -35,7 +38,7 @@ def list_command(
         table.add_row(
             str(note.id),
             note.title,
-            note.note_type.value,
+            note.note_type.value.upper(),
             note.status_display,
             note.created_display,
         )

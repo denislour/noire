@@ -42,5 +42,5 @@ dev = [
     "pytest>=8.3.5",
 ]
 
-[project.script]
+[project.scripts]
 noir = "src.main:app"

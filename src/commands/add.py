@@ -1,7 +1,7 @@
 from typer import Option
 
 from src.models.note import NoteType
-from src.databases.note_repository import NoteRepository
+from src.repository.note_repository import NoteRepository
 
 
 def add_command(

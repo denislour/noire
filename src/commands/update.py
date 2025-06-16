@@ -1,7 +1,7 @@
 # src/commands/update.py
 from typing import Optional
 import typer
-from src.databases.note_repository import NoteRepository
+from src.repository.note_repository import NoteRepository
 from src.models.note import NoteType
 
 

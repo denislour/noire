@@ -1,7 +1,7 @@
 from typer import Option
 
 from src.models.note import NoteType
-from src.repository.note_repository import NoteRepository
+from src.repository.note_repository import note_repository
 
 
 def add_command(
@@ -16,6 +16,5 @@ def add_command(
     ),
 ) -> None:
     """Add a new note to the system."""
-    repo = NoteRepository()
-    note = repo.add_note(title, note_type)
+    note = note_repository.add_note(title, note_type)
     print(f"✅ Added note: {note.title} (ID: {note.id}, Type: {note.note_type.value})")

@@ -4,7 +4,7 @@ from typing import Optional
 import typer
 
 from src.models.note import NoteType
-from src.repository.note_repository import NoteRepository
+from src.repository.note_repository import note_repository
 
 
 def update_command(
@@ -26,8 +26,7 @@ def update_command(
     ),
 ) -> None:
     """Update the title and/or type of an existing note."""
-    repo = NoteRepository()
-    note_to_update = repo.get_note_by_id(note_id)
+    note_to_update = note_repository.get_note_by_id(note_id)
 
     if not note_to_update:
         print(f"❌ Error: Note with ID {note_id} not found.")
@@ -47,7 +46,7 @@ def update_command(
         )
         return
 
-    success = repo.update_note(note_id, fields_to_update)
+    success = note_repository.update_note(note_id, fields_to_update)
 
     if success:
         print(f"✅ Note ID {note_id} updated successfully.")

@@ -5,7 +5,7 @@ from rich.table import Table
 from typer import Option
 
 from src.models.note import NoteType
-from src.repository.note_repository import NoteRepository
+from src.repository.note_repository import note_repository
 
 console = Console()
 
@@ -20,8 +20,7 @@ def list_command(
     completed: Optional[bool] = Option(None, help="Filter by completion status"),
 ) -> None:
     """Display list of notes with optional filtering."""
-    repo = NoteRepository()
-    notes = repo.filter_notes(note_type, completed)
+    notes = note_repository.filter_notes(note_type, completed)
 
     if not notes:
         console.print("📝 No notes found!")

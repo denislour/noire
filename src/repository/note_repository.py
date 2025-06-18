@@ -1,8 +1,9 @@
 from typing import List, Optional
+
 from sqlmodel import select
 
-from src.models.note import Note, NoteType
 from src.core.decorators import with_session
+from src.models.note import Note, NoteType
 
 
 class NoteRepository:
@@ -65,8 +66,8 @@ class NoteRepository:
             query = query.where(Note.note_type == note_type)
         if completed is not None:
             if completed:
-                query = query.where(Note.completed_at.is_not(None))
+                query = query.where(Note.completed_at is not None)
             else:
-                query = query.where(Note.completed_at.is_(None))
+                query = query.where(Note.completed_at is None)
 
         return session.exec(query).all()

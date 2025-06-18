@@ -1,8 +1,10 @@
 # src/commands/update.py
 from typing import Optional
+
 import typer
-from src.repository.note_repository import NoteRepository
+
 from src.models.note import NoteType
+from src.repository.note_repository import NoteRepository
 
 
 def update_command(

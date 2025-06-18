@@ -71,3 +71,6 @@ class NoteRepository:
                 query = query.where(Note.completed_at is None)
 
         return session.exec(query).all()
+
+
+note_repository = NoteRepository()
